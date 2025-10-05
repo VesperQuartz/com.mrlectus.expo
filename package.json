@@ -41,6 +41,7 @@
     "@rn-primitives/toggle": "^1.2.0",
     "@rn-primitives/toggle-group": "^1.2.0",
     "@rn-primitives/tooltip": "^1.2.0",
+    "@tanstack/react-form": "^1.23.5",
     "@tanstack/react-query": "^5.83.0",
     "await-to-ts": "^1.0.6",
     "class-variance-authority": "^0.7.1",
