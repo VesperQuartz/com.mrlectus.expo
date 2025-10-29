@@ -1,11 +1,9 @@
-import { z } from "zod/v4";
+import { z } from "zod";
 
 const envSchema = z
 	.object({
-		baseUrl: z.string(),
+		EXPO_PUBLIC_BASE_URL: z.string(),
 	})
 	.readonly();
 
-export const env = envSchema.parse({
-	baseUrl: process.env.EXPO_PUBLIC_BASE_URL,
-});
+export const env = envSchema.parse(process.env);

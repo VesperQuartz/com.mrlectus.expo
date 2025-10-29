@@ -1,4 +1,4 @@
-import "~/global.css";
+import "@/global.css";
 import {
 	DarkTheme,
 	DefaultTheme,
@@ -10,10 +10,10 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { Appearance, Platform } from "react-native";
-import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
-import { NAV_THEME } from "~/lib/constants";
-import { useColorScheme } from "~/lib/use-color-scheme";
-import { AsyncProvider } from "~/providers/async";
+import { setAndroidNavigationBar } from "@/lib/android-navigation-bar";
+import { NAV_THEME } from "@/lib/constants";
+import { useColorScheme } from "@/lib/use-color-scheme";
+import { AsyncProvider } from "@/providers/async";
 export const unstable_settings = {
 	// Ensure that reloading on `/modal` keeps a back button present.
 	initialRouteName: "(home)",
@@ -34,7 +34,7 @@ export {
 
 const useSetAndroidNavigationBar = () => {
 	React.useLayoutEffect(() => {
-		setAndroidNavigationBar(Appearance.getColorScheme() ?? "light");
+		setAndroidNavigationBar(Appearance.getColorScheme() ? "light" : "dark");
 	}, []);
 };
 

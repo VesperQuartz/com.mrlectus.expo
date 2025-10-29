@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
-import { Container } from "~/components/container";
-import { Button } from "~/components/ui/button";
+import { Container } from "@/components/container";
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
 	return (

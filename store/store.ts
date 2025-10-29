@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { mmkvStorage } from "~/lib/mmkv";
-import { User } from "~/types";
+import { mmkvStorage } from "@/lib/mmkv";
+import { User } from "@/types";
 
 type AuthState = {
 	user: User | undefined | null;

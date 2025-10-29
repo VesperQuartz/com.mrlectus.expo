@@ -11,7 +11,7 @@ import { HTTPError } from "ky";
 import React from "react";
 import type { AppStateStatus } from "react-native";
 import { AppState, Platform } from "react-native";
-import { useAuthStore } from "~/store/store";
+import { useAuthStore } from "@/store/store";
 
 onlineManager.setEventListener((setOnline) => {
 	const eventSubscription = Network.addNetworkStateListener((state) => {
