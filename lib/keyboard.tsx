@@ -35,8 +35,7 @@ export function useKeyboard(
 			showListener.remove();
 			hideListener.remove();
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [eventType]);
 
 	function dismissKeyboard() {
 		Keyboard.dismiss();
