@@ -1,0 +1,23 @@
+{
+	"name": "@repo/shared",
+	"type": "module",
+	"types": "./dist/index.d.mts",
+	"devDependencies": {
+		"@repo/typescript-config": "workspace:*"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"watch": "tsdown --watch",
+		"lint": "biome check"
+	},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./env": "./dist/env/index.mjs",
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"effect": "^3.20.0",
+		"tsx": "^4.21.0",
+		"zod": "^4.3.6"
+	}
+}

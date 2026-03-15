@@ -1,0 +1,4 @@
+export BETTER_AUTH_SECRET=
+export BETTER_AUTH_URL=https://strong-carefully-fly.ngrok-free.app
+export DATABASE_URL=
+export EXPO_PUBLIC_API_URL=https://strong-carefully-fly.ngrok-free.app

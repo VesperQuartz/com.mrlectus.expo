@@ -1,0 +1,41 @@
+{
+	"name": "@repo/orpc",
+	"type": "module",
+	"types": "./dist/index.d.mts",
+	"devDependencies": {
+		"@repo/typescript-config": "workspace:*"
+	},
+	"scripts": {
+		"lint": "biome check",
+		"build": "tsdown",
+		"watch": "tsdown --watch"
+	},
+	"imports": {
+		"#/*": "./src/*"
+	},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./client": "./dist/client/index.mjs",
+		"./openapi": "./dist/openapi/index.mjs",
+		"./routers": "./dist/routers/index.mjs",
+		"./routers/base": "./dist/routers/base/index.mjs",
+		"./routers/middleware": "./dist/routers/middleware/index.mjs",
+		"./routers/todo": "./dist/routers/todo/index.mjs",
+		"./server": "./dist/server/index.mjs",
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"@orpc/client": "^1.13.9",
+		"@orpc/openapi": "^1.13.9",
+		"@orpc/openapi-client": "^1.13.9",
+		"@orpc/server": "^1.13.9",
+		"@orpc/zod": "^1.13.9",
+		"@repo/auth": "workspace:*",
+		"@repo/shared": "workspace:*",
+		"effect": "^3.20.0",
+		"expo": "^55.0.8",
+		"expo-constants": "~55.0.9",
+		"ts-pattern": "^5.9.0",
+		"zod": "^4.3.6"
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "server",
+	"type": "module",
+	"scripts": {
+		"dev": "PORT=4747 bun run --hot src/index.ts",
+		"build": "tsdown",
+		"watch": "tsdown --watch",
+		"lint": "biome check",
+		"serve": "ngrok http 4747 --url https://strong-carefully-fly.ngrok-free.app"
+	},
+	"dependencies": {
+		"@repo/auth": "workspace:*",
+		"@repo/orpc": "workspace:*",
+		"@repo/shared": "workspace:*",
+		"@repo/storage": "workspace:*",
+		"hono": "^4.12.8",
+		"hono-pino": "^0.10.3",
+		"pino": "^10.3.1"
+	},
+	"devDependencies": {},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./factory": "./dist/factory/index.mjs",
+		"./package.json": "./package.json"
+	}
+}
