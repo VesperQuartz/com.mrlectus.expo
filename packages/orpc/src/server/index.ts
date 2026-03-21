@@ -1,4 +1,3 @@
-import { OpenAPIHandler } from "@orpc/openapi/fetch";
 import { OpenAPIReferencePlugin } from "@orpc/openapi/plugins";
 import { onError } from "@orpc/server";
 import { CompressionPlugin } from "@orpc/server/fetch";
@@ -9,9 +8,10 @@ import {
 } from "@orpc/server/plugins";
 import { ZodToJsonSchemaConverter } from "@orpc/zod";
 import { env } from "@repo/shared";
-import { router } from "../routers";
+import { router } from "#/routers";
+import { SuperJSONHandler } from "#/routers/middleware/superjson-handler";
 
-export const handler = new OpenAPIHandler(router, {
+export const handler = new SuperJSONHandler(router, {
 	plugins: [
 		new CORSPlugin(),
 		new RequestHeadersPlugin(),
