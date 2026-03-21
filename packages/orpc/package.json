@@ -28,19 +28,19 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"@orpc/client": "^1.13.9",
-		"@orpc/openapi": "^1.13.9",
-		"@orpc/openapi-client": "^1.13.9",
-		"@orpc/server": "^1.13.9",
-		"@orpc/shared": "^1.13.9",
-		"@orpc/zod": "^1.13.9",
+		"@orpc/client": "^1.14.5",
+		"@orpc/openapi": "^1.14.5",
+		"@orpc/openapi-client": "^1.14.5",
+		"@orpc/server": "^1.14.5",
+		"@orpc/shared": "^1.14.5",
+		"@orpc/zod": "^1.14.5",
 		"@repo/auth": "workspace:*",
 		"@repo/shared": "workspace:*",
-		"effect": "^3.20.0",
-		"expo": "^55.0.8",
-		"expo-constants": "~55.0.9",
+		"effect": "^3.21.3",
+		"expo": "^56.0.9",
+		"expo-constants": "~56.0.17",
 		"superjson": "^2.2.6",
 		"ts-pattern": "^5.9.0",
-		"zod": "^4.3.6"
+		"zod": "^4.4.3"
 	}
 }

@@ -13,7 +13,7 @@
 		"@repo/orpc": "workspace:*",
 		"@repo/shared": "workspace:*",
 		"@repo/storage": "workspace:*",
-		"hono": "^4.12.8",
+		"hono": "^4.12.25",
 		"hono-pino": "^0.10.3",
 		"pino": "^10.3.1"
 	},

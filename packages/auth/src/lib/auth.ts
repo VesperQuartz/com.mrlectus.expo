@@ -1,3 +1,4 @@
+import { env } from "@repo/shared";
 import { db } from "@repo/storage";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
@@ -10,6 +11,7 @@ import {
 import { ac, adminRole, customRole, userRole } from "./permission";
 
 export const auth = betterAuth({
+	baseURL: env.BETTER_AUTH_URL,
 	database: drizzleAdapter(db, {
 		provider: "pg",
 	}),
@@ -26,7 +28,17 @@ export const auth = betterAuth({
 		// 	id,
 		// }),
 	},
-	trustedOrigins: ["https://*.ngrok-free.app"],
+	trustedOrigins: [
+		"https://*.ngrok-free.app",
+		"mobile://",
+		...(process.env.NODE_ENV === "development"
+			? [
+					"exp://", // Trust all Expo URLs (prefix matching)
+					"exp://**", // Trust all Expo URLs (wildcard matching)
+					"exp://192.168.*.*:*/**", // Trust 192.168.x.x IP range with any port and path
+				]
+			: []),
+	],
 	plugins: [
 		openAPI(),
 		bearer(),
