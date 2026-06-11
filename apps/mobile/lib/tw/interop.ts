@@ -1,21 +1,23 @@
-import { cssInterop } from "nativewind";
 import {
-	View,
-	Text,
+	Image,
 	Pressable,
 	ScrollView,
+	Text,
 	TextInput,
-	Image,
 	TouchableHighlight,
+	View,
 } from "react-native";
+import { withUniwind } from "uniwind";
 
-cssInterop(View, { className: "style" });
-cssInterop(Text, { className: "style" });
-cssInterop(Pressable, { className: "style" });
-cssInterop(ScrollView, {
-	className: "style",
-	contentContainerClassName: "contentContainerStyle",
+withUniwind(View, { className: { fromClassName: "style" } });
+withUniwind(Text, { className: { fromClassName: "style" } });
+withUniwind(Pressable, { className: { fromClassName: "style" } });
+withUniwind(ScrollView, {
+	className: { fromClassName: "style" },
+	contentContainerClassName: {
+		fromClassName: "contentContainerStyle",
+	},
 });
-cssInterop(TextInput, { className: "style" });
-cssInterop(Image, { className: "style" });
-cssInterop(TouchableHighlight, { className: "style" });
+withUniwind(TextInput, { className: { fromClassName: "style" } });
+withUniwind(Image, { className: { fromClassName: "style" } });
+withUniwind(TouchableHighlight, { className: { fromClassName: "style" } });

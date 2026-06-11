@@ -1,6 +1,7 @@
+import { expo } from "@better-auth/expo";
 import { env } from "@repo/shared";
 import { db } from "@repo/storage";
-import { betterAuth } from "better-auth";
+import { type BetterAuthOptions, betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import {
 	admin as adminPlugin,
@@ -10,23 +11,13 @@ import {
 } from "better-auth/plugins";
 import { ac, adminRole, customRole, userRole } from "./permission";
 
-export const auth = betterAuth({
+const authConfig: BetterAuthOptions = {
 	baseURL: env.BETTER_AUTH_URL,
 	database: drizzleAdapter(db, {
 		provider: "pg",
 	}),
 	emailAndPassword: {
 		enabled: true,
-		// requireEmailVerification: true,
-		// customSyntheticUser: ({ coreFields, additionalFields, id }) => ({
-		// 	...coreFields,
-		// 	role: "user", // or your configured defaultRole
-		// 	banned: false,
-		// 	banReason: null,
-		// 	banExpires: null,
-		// 	...additionalFields,
-		// 	id,
-		// }),
 	},
 	trustedOrigins: [
 		"https://*.ngrok-free.app",
@@ -42,6 +33,7 @@ export const auth = betterAuth({
 	plugins: [
 		openAPI(),
 		bearer(),
+		expo(),
 		username(),
 		adminPlugin({
 			ac,
@@ -54,4 +46,8 @@ export const auth = betterAuth({
 			adminRoles: ["admin", "superadmin"],
 		}),
 	],
-});
+} satisfies BetterAuthOptions;
+
+export const auth = betterAuth(authConfig) as ReturnType<
+	typeof betterAuth<typeof authConfig>
+>;

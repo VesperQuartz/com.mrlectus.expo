@@ -1,13 +1,13 @@
-import "../global.css";
+import "@/global.css";
 
 import { Toasts } from "@backpackapp-io/react-native-toast";
+import { authClient } from "@repo/auth/lib/auth-client";
 import { PortalHost } from "@rn-primitives/portal";
 import { SplashScreen, Stack } from "expo-router";
 import React from "react";
 import { StatusBar } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { authClient } from "@/lib/auth-client";
 import { AsyncProvider } from "@/providers/async";
 
 SplashScreen.preventAutoHideAsync();

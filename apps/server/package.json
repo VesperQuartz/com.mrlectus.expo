@@ -9,15 +9,16 @@
 		"serve": "ngrok http 4747 --url https://strong-carefully-fly.ngrok-free.app"
 	},
 	"dependencies": {
+		"@praha/byethrow": "^0.12.0",
 		"@repo/auth": "workspace:*",
 		"@repo/orpc": "workspace:*",
 		"@repo/shared": "workspace:*",
 		"@repo/storage": "workspace:*",
+		"effect": "^3.21.3",
 		"hono": "^4.12.25",
 		"hono-pino": "^0.10.3",
 		"pino": "^10.3.1"
 	},
-	"devDependencies": {},
 	"exports": {
 		".": "./dist/index.mjs",
 		"./factory": "./dist/factory/index.mjs",

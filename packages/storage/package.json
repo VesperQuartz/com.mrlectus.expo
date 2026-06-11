@@ -23,6 +23,8 @@
 	"dependencies": {
 		"@neondatabase/serverless": "^1.1.0",
 		"@repo/shared": "workspace:*",
-		"drizzle-orm": "^0.45.2"
+		"drizzle-cuid2": "^2.2.0",
+		"drizzle-orm": "^0.45.2",
+		"drizzle-zod": "^0.8.3"
 	}
 }

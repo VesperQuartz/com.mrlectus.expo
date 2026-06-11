@@ -9,5 +9,5 @@ const envSchema = z.readonly(
 	}),
 );
 
-//@ts-ignore
+//@ts-expect-error
 export const env = envSchema.parse(process.env);

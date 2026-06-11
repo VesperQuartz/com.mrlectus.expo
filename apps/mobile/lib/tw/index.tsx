@@ -1,5 +1,5 @@
 import { Link as RouterLink } from "expo-router";
-import React from "react";
+import type React from "react";
 import {
 	Pressable as RNPressable,
 	ScrollView as RNScrollView,
@@ -22,13 +22,13 @@ export const Link = (
 	return useCssElement(RouterLink, props, { className: "style" });
 };
 
-// @ts-ignore
+// @ts-expect-error
 Link.Trigger = RouterLink.Trigger;
-// @ts-ignore
+// @ts-expect-error
 Link.Menu = RouterLink.Menu;
-// @ts-ignore
+// @ts-expect-error
 Link.MenuAction = RouterLink.MenuAction;
-// @ts-ignore
+// @ts-expect-error
 Link.Preview = RouterLink.Preview;
 
 // CSS Variable hook

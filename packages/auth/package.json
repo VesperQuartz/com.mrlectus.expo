@@ -6,6 +6,7 @@
 		".": "./dist/index.mjs",
 		"./lib": "./dist/lib/index.mjs",
 		"./lib/auth": "./dist/lib/auth.mjs",
+		"./lib/auth-client": "./dist/lib/auth-client.mjs",
 		"./lib/permission": "./dist/lib/permission.mjs",
 		"./package.json": "./package.json"
 	},
@@ -22,6 +23,7 @@
 		"@better-auth/expo": "^1.6.16",
 		"@repo/shared": "workspace:*",
 		"@repo/storage": "workspace:*",
-		"better-auth": "^1.6.16"
+		"better-auth": "^1.6.16",
+		"expo-secure-store": "~56.0.4"
 	}
 }
