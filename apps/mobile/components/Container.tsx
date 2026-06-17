@@ -1,13 +1,18 @@
-import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface ContainerProps {
 	children: React.ReactNode;
 }
 
 export const Container: React.FC<ContainerProps> = ({ children }) => {
-	return <View className={styles.container}>{children}</View>;
-};
-
-const styles = {
-	container: "flex flex-1 p-safe bg-white",
+	return (
+		<SafeAreaView
+			style={{
+				flex: 1,
+				backgroundColor: "#fff",
+			}}
+		>
+			{children}
+		</SafeAreaView>
+	);
 };
