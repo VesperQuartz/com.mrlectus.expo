@@ -1,6 +1,5 @@
 import "@/global.css";
 
-import { Toasts } from "@backpackapp-io/react-native-toast";
 import { authClient } from "@repo/auth/lib/auth-client";
 import { PortalHost } from "@rn-primitives/portal";
 import { SplashScreen, Stack } from "expo-router";
@@ -8,6 +7,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Toaster } from "sonner-native";
 import { AsyncProvider } from "@/providers/async";
 
 SplashScreen.preventAutoHideAsync();
@@ -48,7 +48,7 @@ export default function Layout() {
 					</Stack>
 					<PortalHost />
 					<StatusBar backgroundColor="transparent" barStyle="dark-content" />
-					<Toasts />
+					<Toaster />
 				</SafeAreaProvider>
 			</AsyncProvider>
 		</GestureHandlerRootView>
